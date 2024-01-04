@@ -27,6 +27,47 @@
             <h1>Hi, I'm <span>Minyoung</span><br>Heo from California</h1>
         </div>
     </div>
+<!------------------------about------------------------------------------>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1"><img src="images/mascot.png"></div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">About Me</h1>
+                    <p>I'm an aspiring game designer/developer, and currently learning about game development 
+                        and design. In particular, I am passionate about creating meaningful and invaluable 
+                        playful experiences. I believe that games can help individuals and influence their 
+                        lives. It's not a one-stop, solve-all kind of solution to our problems, but it motivates, 
+                        teaches, and connects us. Experiences shape lives, and I hope you agree with me too.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                            <li><span>Game Programming</span><br>Unity Engine, C#, Java, C++</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Stempia Academy <em>(2015-2023)</em></span><br>Teaching high school students programming,
+                             achieving certifications and prizes in competitions such as ACSL, Codequest, and
+                             USACO</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>USC <em>2017-2024</em></span><br>Applied Computational Mathematics B.A.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <h2>Projects</h2>
     <h3>1. Aguile</h3>
@@ -71,5 +112,21 @@
     <a href="https://github.com/miniminja" target="_blank"><img src="images/github-mark.png" width="100"></a>
     <a href="https://www.linkedin.com/in/minyoungheo/" target="_blank"><img src="images/LI-In-Bug.png" width="100"></a>
     <a href="https://miniminja.itch.io/" target="_blank"><img src="images/itch-io.png" width="100"></a>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
 </body>
 </html>
